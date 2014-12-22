@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+'use strict';
+
+var config = require('../config'),
+    app = require('../app'),
+    debug = require('debug')('sandbox');
+
+app.set('port', config.express.port);
+app.set('id', config.express.ip);
+
+var server = app.listen(app.get('port'), app.get('ip'), function() {
+	debug('Express server listening on port ' + server.address().port);
+});
