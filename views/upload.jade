@@ -1,0 +1,18 @@
+extends ./partials/html.jade
+
+block title
+	title= title
+
+block scripts
+	script(src='/scripts/upload-controller.js')
+
+block content
+	+grid
+		.header
+			+row
+				+col(2, 14)
+					.form__wrapper(ng-controller='upload')
+						form(method='POST', enctype='multipart/form-data')
+							label
+								input(type='url')
+							button(type='submit') Upload

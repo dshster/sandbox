@@ -3,8 +3,12 @@ include ./grid.jade
 doctype html
 html
 	head
-		block title
 		link(rel='stylesheet', href='/stylesheets/index.css')
+		script(src='/vendors/angularjs/angular.min.js')
 
-	body
+		block scripts
+
+		block title
+
+	body(ng-app='gifboard')
 		block content

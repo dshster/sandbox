@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 [
 	'./routes/index',
+	'./routes/upload'
 ].forEach(function(route) {
 	app.use('/', require(route));
 });
