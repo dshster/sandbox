@@ -11,8 +11,8 @@ block content
 		.header
 			+row
 				+col(2, 14)
-					.form__wrapper(ng-controller='upload')
-						form(method='POST', enctype='multipart/form-data')
-							label
-								input(type='url')
-							button(type='submit') Upload
+					.form__wrapper(ng-controller='uploadController')
+						form(method='POST', name='upload', novalidate='novalidate', enctype='multipart/form-data', ng-submit='submitForm()')
+							label Url upload:
+								input(type='url', placeholder='upload url', required='required', ng-model='url')
+							button(type='submit', ng-show='{{upload.$valid}}') Upload

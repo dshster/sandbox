@@ -12,6 +12,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.enabled('case sensitive routes');
+app.enabled('strict routing');
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
